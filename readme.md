@@ -1,14 +1,16 @@
-# BackEnd - NodeJs - Rest
+# Stack - NodeJs - React - MongoDB
 
 Para esta app no modelo rest, foi utilizado o NodeJs, o Gerenciador de pacotes Yarn e o sistema operacional Ubuntu.
 
-## Install:
+## Instalação
 
-1. NodeJs:
+1. NodeJs: Versão LTS
+
     a) Installing Node.js via package manager https://github.com/nodesource/distributions/blob/master/README.md
-    b) Install
-    
-    ```
+
+    b) Install:
+
+    ```bash
         # Using Ubuntu
         curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
         sudo apt-get install -y nodejs
@@ -17,28 +19,67 @@ Para esta app no modelo rest, foi utilizado o NodeJs, o Gerenciador de pacotes Y
 
 
 
-1.2 NodeJs: nvm
+2. NVM: Node Version Manager
+
+    Gerenciador de versões Node.
+
     a) https://github.com/nvm-sh/nvm
-  
 
 
 
-2. Node Package Manager
+
+3. NPM: Node Package Manager
+
+    Gerenciador de pacotes/dependecias Node.
+
     a) https://www.npmjs.com/
+
     b) npm -v = 6.9.0
 
 
 
-3. Yarn:
-    a)  Install
+4. Yarn:
 
-    ```
+    Gerenciador de pacotes/dependencias Node.
+
+    a)  Install:
+
+    ```bash
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
     sudo apt-get update
     sudo apt-get install --no-install-recommends yarn (Caso já tenha instalado o node)
     ```
     b) yarn -v = 1.16.0
+
+
+## Iniciando o projeto
+
+**Iniciando o Yarn**
+
+No terminal, dentro da pasta backEnd, executar o Yarn para dar "um start" no projeto. Este comando irá criar um package.json (arquivo fundamental do javaScript)
+
+```
+$ yarn init -y
+```
+
+**Istalando o Express**
+
+```
+$ yarn add express
+```
+Este comando ira instalar as dependencias do Express. Você poderá observar no arquivo package.json que o nome express estará lá. Você poderá observar também que um arquivo yarn.lock foi criado, juntamnete com a pasta node_modules. O yarn.lock é um arquivo de cache e o node_modules é onde estará as funcionalidades das bibliotecas instaladas.
+
+
+**Rodar o projeto**
+No terminal digitar:
+```
+$ node src/index.js
+
+#Com o Nodemon, basta digitar:
+
+$yarn dev
+```
 
 
 
@@ -59,6 +100,7 @@ Para esta app no modelo rest, foi utilizado o NodeJs, o Gerenciador de pacotes Y
 
 
 **Express**
+
 O Express é um framework para aplicativo da web do Node.js mínimo e flexível que fornece um conjunto robusto de recursos para aplicativos web e móvel.
 
 ```
@@ -67,23 +109,35 @@ $ yarn add express
 
 
 **Multer**
+
 Multer: biblioteca que lida com corpos multPartForm-data (images) e já automatiza o processo de upload de arquivos.
-cd backend(Pasta que esta meu package.json)
+
+```
+$cd backend   #Pasta que esta meu package.json
 $yarn add multer
+```
 
 
 
 **Sharp**
-Sharp: Permite manipular imagens size.
-$yarn add sharp
 
+Sharp: Permite manipular imagens size.
+
+```
+$yarn add sharp
+```
 
 
 **Nodemon**
+
+Reload de servidor.
+
 ```
 $ yarn add nodemon
 ```
+
 Com o nodemon, posso criar um script dev no meu arquivo package.json.
+
 ```
 {
   "name": "backend",
@@ -105,25 +159,25 @@ Agora passo a digitar( $yarn dev )no terminal.
 
 
 **Mongoose**
-Esta bibllioteca permite utilizar o mongoDb em nossa aplicação com base em node. 
+
+Esta bibllioteca permite utilizar o mongoDb em nossa aplicação com base em node. Caso queira utilizar o sql, ver a dependencia **Sequelize** https://blog.rocketseat.com.br/nodejs-express-sequelize/
+
 ```
 $yarn add mongoose
 ```
 
 
-
-
-
 **cors**
-Permite que meu backend seja acessível pelo frontend react, 
-mesmo estando em domínios diferentes.
+
+Permite que meu backend seja acessível pelo frontend react, mesmo estando em domínios diferentes.
 
 ```
 $yarn add cors
 ```
 
 **Socket.io**
-Para usar outro protocolo. O protocolo web socket. 
+
+Para usar outro protocolo. O protocolo web socket.
 
 ```
 $yarn add socket.io
@@ -131,38 +185,21 @@ $yarn add socket.io
 
 
 
-
-
-
-## Iniciando o projeto
-No terminal executar o Yarn para dar "um start" no projeto. Este comando ira criar um package.json
-
-```
-$ yarn init -y
-```
-
-**Rodar o projeto**
-No terminal digitar:
-```
-$ node src/index.js
-
-#Com o Nodemon
-
-$yarn dev
-```
-
-
-
 ## MONGO DB online
 https://www.mongodb.com/cloud/atlas
 
-a) create cluster 
+a) create cluster
 b) clicar em conect
 c) conect you aplication
 d) copiar o link de conecção.
 
 
 
-# TestarMétodos
+## TestarMétodos
 insomnia:
 https://insomnia.rest/
+
+**Post**
+
+Requisição do tipo Post
+  Tipo Multipart Form

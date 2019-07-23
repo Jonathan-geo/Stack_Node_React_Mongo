@@ -51,7 +51,7 @@ module.exports = {
 
         // Esta const transforma a imagem png, por exemplo, no arquivo jpg.
         const [name] = image.split('.');
-        const fileName = "${name}.jpg";
+        const fileName = name +'.jpg';
 
         // Redimencionado a imagem
         await sharp(req.file.path)

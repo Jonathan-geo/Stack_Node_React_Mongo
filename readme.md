@@ -2,6 +2,10 @@
 
 Para esta app no modelo rest, foi utilizado o NodeJs, o Gerenciador de pacotes Yarn e o sistema operacional Ubuntu.
 
+
+# Back-End
+
+
 ## Instalação
 
 1. NodeJs: Versão LTS
@@ -178,6 +182,7 @@ $yarn add cors
 **Socket.io**
 
 Para usar outro protocolo. O protocolo web socket.
+Também é fundamental para fazer o reload automático da página (Para isso usar a lib socket.io-client no front)
 
 ```
 $yarn add socket.io
@@ -203,3 +208,87 @@ https://insomnia.rest/
 
 Requisição do tipo Post
   Tipo Multipart Form
+
+
+
+
+# Front-End
+
+**Instalando o Create React**
+
+Versão antiga
+> npm install -g create-react-app
+
+Desinstalar versão antiga
+> npm uninstall -g create-react-app
+
+
+Versão mais recente
+
+> yarn global add create-react-app
+
+> npx create-react-app frontEnd
+
+
+
+
+**Iniciando o React**
+
+O comando a seguir faz a inicialização das dependencias necessárias para a inicialização do front-end com React.
+Neste comando, o frontEnd no final é utilizado para criar uma pasta onde sera alocado a minha pasta node_modules e todos os arquivos de configuração do react.
+
+Com Yarn
+```
+$ yarn create react-app frontEnd  //Este foi o comando que usei nesta aplicação.
+```
+
+Com NPX
+```
+$ npx create-react-app frontEnd
+```
+
+Com npm
+
+```
+$ npm create-react-app frontEnd
+```
+
+**React Start**
+
+```
+$yarn start
+```
+
+
+
+**Gerenciador de Rotas**
+
+Dependencia utilizada para gerenciar as rotas.
+
+```
+$yarn add react-router-dom
+```
+
+
+**Axios**
+
+Esta lib irá buscar as informações do backEnd para o frontEnd.
+A biblioteca nativa do fatch que permite fazer requisições http (ajax).
+Mas para esta app iremos usar a Axios para fazer estas requisi.
+A axios permite, dentre várias coisas, configurar base URL, que irá servir para todas as requisições.
+
+```
+$yarn add axios
+```
+
+**Socket.io-client**
+
+Utilizada para fazer o reload automático da página. 
+
+```
+$yarn add socket.io-client
+```
+
+
+
+#
